@@ -1,4 +1,3 @@
-import java.io.File
 import java.util.*
 import kotlin.math.max
 
@@ -11,7 +10,7 @@ fun day1Part1(inputFileName: String): Int {
     var currentElfCalories = 0
     var maxCalories = 0
 
-    File(ClassLoader.getSystemResource(inputFileName).file).forEachLine {
+    loadInput(inputFileName).forEachLine {
         if (it.isBlank()) {
             maxCalories = max(currentElfCalories, maxCalories)
             currentElfCalories = 0
@@ -27,7 +26,7 @@ fun day1Part2(inputFileName: String): Int {
     var currentElfCalories = 0
     val top3Calories = LinkedList(listOf(0, 0, 0))
 
-    File(ClassLoader.getSystemResource(inputFileName).file).forEachLine { line ->
+    loadInput(inputFileName).forEachLine { line ->
         if (line.isBlank()) {
             for(idx in 0 until 3) {
                 if (currentElfCalories > top3Calories[idx]) {
