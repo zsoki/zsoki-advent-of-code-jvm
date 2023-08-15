@@ -35,6 +35,57 @@ public class Day3 {
         return prioritiesSum;
     }
 
+    public static int calculateBadgePrioritySum(List<String> lines) {
+        int prioritiesSum = 0;
+
+        for (int lineIndex = 0; lineIndex <= lines.size() - 3; lineIndex += 3) {
+            int[] priorityFlags = new int[53];
+            var rucksackIndex = 0;
+
+            while (true) {
+                final String firstLine = lines.get(lineIndex);
+                if (rucksackIndex < firstLine.length()) {
+                    int firstPriority = convertCharPriority(firstLine.charAt(rucksackIndex));
+                    int flag = priorityFlags[firstPriority];
+                    if (flag == 6) {
+                        prioritiesSum += firstPriority;
+                        break;
+                    } else if (flag == 0 || flag == 2 || flag == 4) {
+                        priorityFlags[firstPriority] += 1;
+                    }
+                }
+
+                final String secondLine = lines.get(lineIndex + 1);
+                if (rucksackIndex < secondLine.length()) {
+                    int secondPriority = convertCharPriority(secondLine.charAt(rucksackIndex));
+                    int flag = priorityFlags[secondPriority];
+                    if (flag == 5) {
+                        prioritiesSum += secondPriority;
+                        break;
+                    } else if (flag == 0 || flag == 1 || flag == 4) {
+                        priorityFlags[secondPriority] += 2;
+                    }
+                }
+
+                final String thirdLine = lines.get(lineIndex + 2);
+                if (rucksackIndex < thirdLine.length()) {
+                    int thirdPriority = convertCharPriority(thirdLine.charAt(rucksackIndex));
+                    int flag = priorityFlags[thirdPriority];
+                    if (flag == 3) {
+                        prioritiesSum += thirdPriority;
+                        break;
+                    } else if (flag == 0 || flag == 1 || flag == 2) {
+                        priorityFlags[thirdPriority] += 4;
+                    }
+                }
+
+                rucksackIndex += 1;
+            }
+        }
+
+        return prioritiesSum;
+    }
+
     public static int convertCharPriority(char character) {
         if (character >= 97 && character <= 122) {
             return character - 96;

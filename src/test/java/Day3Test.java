@@ -9,9 +9,8 @@ import java.util.List;
 class Day3Test {
 
     @Test
-    public void testExample() {
-        final String path = ClassLoader.getSystemResource("day3_example.txt").getPath();
-
+    public void day3Part1TestExample() {
+        final String path = ClassLoader.getSystemResource("day3_part1_example.txt").getPath();
         try {
             List<String> lines = Files.readAllLines(Path.of(path));
             Assertions.assertEquals(157, Day3.calculatePrioritiesSum(lines));
@@ -21,12 +20,33 @@ class Day3Test {
     }
 
     @Test
-    public void solveDay3() {
+    public void solveDay3Part1() {
         final String path = ClassLoader.getSystemResource("day3.txt").getPath();
-
         try {
             List<String> lines = Files.readAllLines(Path.of(path));
             System.out.println(Day3.calculatePrioritiesSum(lines));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void day3Part2TestExample() {
+        final String path = ClassLoader.getSystemResource("day3_part2_example.txt").getPath();
+        try {
+            List<String> lines = Files.readAllLines(Path.of(path));
+            Assertions.assertEquals(70, Day3.calculateBadgePrioritySum(lines));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Test
+    public void solveDay3Part2() {
+        final String path = ClassLoader.getSystemResource("day3.txt").getPath();
+        try {
+            List<String> lines = Files.readAllLines(Path.of(path));
+            System.out.println(Day3.calculateBadgePrioritySum(lines));
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
