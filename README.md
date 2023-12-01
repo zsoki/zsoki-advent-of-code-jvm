@@ -1,3 +1,5 @@
-# advent-of-code-2022-jvm
+# zsoki-advent-of-code-jvm
 
-Solving https://adventofcode.com/2022/ in Java and Kotlin.
+These are my solutions for some of these coding challanges in Java and Kotlin:
+- https://adventofcode.com/2022/
+- https://adventofcode.com/2023/
