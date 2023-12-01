@@ -1,3 +1,3 @@
 
-rootProject.name = "advent-of-code-2022-jvm"
+rootProject.name = "advent-of-code-jvm"
 

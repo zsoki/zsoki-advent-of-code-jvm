@@ -1,10 +1,14 @@
+package hu.zsoki.advent.y2022
+
+import hu.zsoki.advent.loadInput
+
 /**
  * https://adventofcode.com/2022/day/1
  * --- Day 2: Rock Paper Scissors ---
  */
 
 fun day2Part1(): Int {
-    return loadInput("day2.txt").useLines { lines: Sequence<String> ->
+    return loadInput("y2022/day2.txt").useLines { lines: Sequence<String> ->
         return lines.fold(0) { acc: Int, line: String ->
             acc + when (line) {
                 "A X" -> 1 + 3 // Rock     vs Rock     (1) = Draw (3)
@@ -23,7 +27,7 @@ fun day2Part1(): Int {
 }
 
 fun day2Part2(): Int {
-    return loadInput("day2.txt").useLines { lines: Sequence<String> ->
+    return loadInput("y2022/day2.txt").useLines { lines: Sequence<String> ->
         return lines.fold(0) { acc: Int, line: String ->
             acc + when (line) {
                 "A X" -> 3 + 0 // Rock     vs Scissors (3) = Loss (0)

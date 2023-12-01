@@ -1,3 +1,5 @@
+package hu.zsoki.advent.y2022;
+
 import java.util.List;
 
 public class Day3 {

@@ -1,3 +1,6 @@
+package hu.zsoki.advent.y2022
+
+import hu.zsoki.advent.loadInput
 import java.util.*
 import kotlin.math.max
 

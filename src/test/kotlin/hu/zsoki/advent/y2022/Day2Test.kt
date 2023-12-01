@@ -1,3 +1,5 @@
+package hu.zsoki.advent.y2022
+
 import org.junit.jupiter.api.Test
 
 class Day2Test {
