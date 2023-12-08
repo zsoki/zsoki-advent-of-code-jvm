@@ -40,7 +40,7 @@ fun day7part1(inputFilename: String): Int {
                     break
                 }
                 3 -> threeOfAKind = true
-                2 -> twoOfAKinds++
+                2 -> twoOfAKinds++ // TODO could break here if threeOfAKind == true
             }
         }
 
